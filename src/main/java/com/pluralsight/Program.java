@@ -19,12 +19,32 @@ public class Program {
         double price1 = 5.45;
         double price2 = 8.95;
 
-        System.out.printf("Tell us how old are you: ");
+        System.out.println("Tell us how old are you: ");
         int age = input.nextInt();
 
         if (age <= 17 && size == 1){
             System.out.println("Nice! You have 10% discount!");
             System.out.printf("Your total is: $%.2f", (price1 - price1 * .1 ));
+
+        } else if (age <= 17 && size == 2) {
+            System.out.println("Nice! You have 10% discount!");
+            System.out.printf("Your total is: $%.2f", (price2 - price2 * .1 ));
+
+        } else if (age >= 65 && size == 1) {
+            System.out.println("Nice! You have 20% discount!");
+            System.out.printf("Your total is: $%.2f", (price1 - price1 * .2 ));
+
+        } else if (age >= 65 && size == 2) {
+            System.out.println("Nice! You have 20% discount!");
+            System.out.printf("Your total is: $%.2f", (price2 - price2 * .2 ));
+
+        } else if (age > 18 && age < 65 && size == 1){
+            System.out.println("No discount today :(");
+            System.out.println("Your total is: $" + price1);
+
+        } else {
+            System.out.println("No discount today :(");
+            System.out.println("Your total is: $" + price2);
         }
 
     }
